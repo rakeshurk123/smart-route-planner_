@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Route Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🚀 Smart Route Planner</h1>
+                <p>Find Shortest Routes Using Dijkstra's Algorithm</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="grid-layout">
+                <!-- Left Panel - Input Section -->
+                <div class="panel input-panel">
+                    <h2>📍 Graph Configuration</h2>
+                    
+                    <div class="form-group">
+                        <label for="cities">Number of Cities:</label>
+                        <input type="number" id="cities" min="2" max="10" value="4" placeholder="Enter number (2-10)">
+                        <button class="btn btn-primary" onclick="generateGraph()">Generate Graph</button>
+                    </div>
+
+                    <!-- Distance Matrix Input -->
+                    <div id="matrixContainer" class="matrix-container">
+                        <!-- Matrix will be generated here -->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sourceNode">Source City:</label>
+                        <input type="number" id="sourceNode" min="0" value="0" placeholder="Enter source">
+                    </div>
+
+                    <button class="btn btn-success" onclick="calculatePaths()">Calculate Shortest Paths</button>
+                    <button class="btn btn-secondary" onclick="resetForm()">Reset</button>
+                </div>
+
+                <!-- Right Panel - Output Section -->
+                <div class="panel output-panel">
+                    <h2>📊 Results</h2>
+                    
+                    <div id="resultsContainer" class="results-container">
+                        <div class="placeholder">
+                            <p>Configure graph and click "Calculate Shortest Paths" to see results</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visualization Section -->
+            <div class="visualization-section">
+                <h2>📈 Path Visualization</h2>
+                <div id="pathVisualization" class="path-visualization">
+                    <div class="placeholder">
+                        <p>Paths will be visualized here</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="stats-section">
+                <h2>📋 Statistics</h2>
+                <div id="statsContainer" class="stats-container">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Cities:</span>
+                        <span id="totalCities" class="stat-value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Source Node:</span>
+                        <span id="sourceDisplay" class="stat-value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Reachable Destinations:</span>
+                        <span id="reachable" class="stat-value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Algorithm:</span>
+                        <span id="algorithm" class="stat-value">Dijkstra</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Original C Code Reference Section -->
+            <div class="code-reference-section">
+                <h2>📝 Original C Code Implementation</h2>
+                <button class="btn btn-secondary" onclick="toggleCCode()">Show/Hide C Code</button>
+                <div id="codeContainer" class="code-container" style="display: none;">
+                    <pre id="codeDisplay" class="code-display"></pre>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Smart Route Planner | Built with Dijkstra's Algorithm | Express.js + Vanilla JavaScript</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
